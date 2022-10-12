@@ -1,3 +1,52 @@
 #root {
-  color: red;
+  color: rgb(193, 193, 193);
+}
+body {
+  padding: 0;
+  margin: 2rem;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(193, 193, 193);
+}
+#episodeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+}
+.episode {
+background-color: white;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 2rem;
+border-color: rgb(193, 193, 193);
+border-style: outset;
+margin: 1rem;
+}
+.title {
+  padding: 1.1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  border-color: black;
+  border-style: double;
+  background-color: rgb(193, 193, 193);
+  width:100%;
+  text-align: center;
+}
+.episodePara {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+.episodeImg {
+  padding-top: 1.1rem;
+  width: 90%;
 }
