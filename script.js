@@ -1,12 +1,21 @@
+
+let searchInput = document.getElementById("search");
+let allEpisodes = [];
+
 //You can edit ALL of the code here
 function setup() {
-  const allEpisodes = getAllEpisodes();
-  makePageForEpisodes(allEpisodes);
+  allEpisodes = getAllEpisodes(); 
+  showEpisodes(allEpisodes); //73
+
+   // show valid search count
+  validSearchCount = document.getElementById("validSearchCount");
+  validSearchCount.innerHTML = `Displaying ${allEpisodes.length}/${allEpisodes.length} episodes`;
+
   //console.log(allEpisodes);
   //allEpisodes.forEach((elem) => console.log(elem.summary));
 }
 
-function makePageForEpisodes(episodeList) {
+function showEpisodes(episodeList) {
   const rootElem = document.getElementById("episodeGrid");
 
   // Start for loop
@@ -55,4 +64,42 @@ function makePageForEpisodes(episodeList) {
   //rootElem.innerHTML = `Got ${episodeList.length} episode(s)`;
 }
 
-window.onload = setup;
+function clearEpisodes() {
+  const rootElem = document.getElementById("episodeGrid");
+  rootElem.innerHTML = "";
+}
+
+//function to search episodes
+searchEpisodes = (e, allEpisodes) => {
+  console.log(e.target.value);
+  let foundEpisodes = [];
+
+  //filter 
+  foundEpisodes = allEpisodes.filter((episode) => {
+   return (
+    episode.name.includes(e.target.value) ||
+    episode.name.toLowerCase().includes(e.target.value) ||
+    episode.summary.includes(e.target.value) ||
+    episode.summary.toLowerCase().includes(e.target.value) 
+   )
+  });
+
+  // clear currently shown on screen
+ clearEpisodes();
+
+  //show found episodes
+  console.log(foundEpisodes);
+  showEpisodes(foundEpisodes); // 4 or 0;
+
+  // show valid search count
+  validSearchCount = document.getElementById("validSearchCount");
+  validSearchCount.innerHTML = `Displaying ${foundEpisodes.length}/${allEpisodes.length} episodes`;
+}
+
+searchInput.addEventListener("input", (e) => {
+  console.log(e.target.value);
+  searchEpisodes(e, allEpisodes);
+});
+
+window.onload = setup;  
+
