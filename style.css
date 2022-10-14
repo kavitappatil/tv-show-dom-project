@@ -44,7 +44,14 @@ body {
   align-self: center;
   margin-bottom: 1.5rem;
 }
-
+/* Selector */
+#episodeSelector {
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  padding-left: 1.7rem;
+  font-size: 1.2rem;
+  color: rgb(117, 116, 116);
+}
 #episodeGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
