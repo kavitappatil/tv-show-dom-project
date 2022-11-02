@@ -8,13 +8,17 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   </head>
   <body>
+    <div id="main"></div>
     <div id="searchBar">
       <input autocomplete="off" type="search" id="search" placeholder="Type to search ..." />
       <p id="validSearchCount">Displaying 73/73 episodes</p>
     </div>
     <div>
-      <select name="episodes" id="episodeSelector">
-        <option value="0" >Select Episode</option>
+      <select name="showSelector" id="showSelector">
+        <option value="0">Select Show</option>
+      </select>
+      <select name="episodeSelector" id="episodeSelector">
+        <option value="0">Select Episode</option>
       </select>
     </div>
     <section id="episodeGrid">
@@ -38,5 +42,7 @@
 
     <!-- Loads YOUR javascript code -->
     <script src="script.js"></script>
+    <script src="shows.js"></script>
+    <script src="test.js"></script>
   </body>
 </html>
